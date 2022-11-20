@@ -46,18 +46,6 @@ for _,v in pairs(game.CoreGui:GetChildren()) do
    end
 end 
 
---[[
-function Skidded() 
-   print("Skid") 
-end
-
-function Cryp:YourSkid() 
-for _,s in Skid(game.CoreGui:FindFirstSkid("You")) 
-   if s == true then
-     s:Skidded() 
-   end
-end
-]] 
 function Cryp:AddWindow(lol)
     local Name = lol.Name
     local Desc = lol.Desc
@@ -82,14 +70,14 @@ elseif theme == "WhiteTheme" then
     local CrypticXD = Instance.new("ScreenGui")
     local MainLib = Instance.new("Frame")
     local headerLine = Instance.new("Frame")
-    local mainCorner = Instance.new("UICorner")
+    --local mainCorner = Instance.new("UICorner")
     local tabMain = Instance.new("Frame")
     local tabFrame = Instance.new("Frame")
     local tabList = Instance.new("UIListLayout")
     local lineTab = Instance.new("Frame")
     local title = Instance.new("TextLabel")
     local elements = Instance.new("Frame")
-    local elementsCorner = Instance.new("UICorner")
+    --local elementsCorner = Instance.new("UICorner")
     local elementFolder = Instance.new("Folder")
 
     CrypticXD.Name = "Cryptic-XD"
@@ -101,6 +89,7 @@ elseif theme == "WhiteTheme" then
     MainLib.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     MainLib.Position = UDim2.new(0.233,0,0.20)
     MainLib.Size = UDim2.new(0, 469, 0, 350)
+    MainLib.BorderColor3 = theme.HeaderColor
 
     headerLine.Name = "headerLine"
     headerLine.Parent = MainLib
@@ -110,8 +99,8 @@ elseif theme == "WhiteTheme" then
     headerLine.Size = UDim2.new(0, 469, 0, 1)
     headerLine.Visible = false
 
-    mainCorner.Name = "mainCorner"
-    mainCorner.Parent = MainLib
+    --mainCorner.Name = "mainCorner"
+    --mainCorner.Parent = MainLib
 
     tabMain.Name = "tabMain"
     tabMain.Parent = MainLib
@@ -190,10 +179,7 @@ elseif theme == "WhiteTheme" then
     elements.ClipsDescendants = true
     elements.Position = UDim2.new(0.0362473354, 0, 0.198347107, 0)
     elements.Size = UDim2.new(0, 435, 0, 250)
-
-    elementsCorner.CornerRadius = UDim.new(0, 3)
-    elementsCorner.Name = "elementsCorner"
-    elementsCorner.Parent = elements
+    elements.BorderColor3 = theme.HeaderColor
 
     elementFolder.Name = "elementFolder"
     elementFolder.Parent = elements
@@ -331,6 +317,7 @@ elseif theme == "WhiteTheme" then
             buttonFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             buttonFrame.BackgroundTransparency = 1.000
             buttonFrame.Size = UDim2.new(0, 435, 0, 50)
+            buttonFrame.BorderColor3 = theme.HeaderColor
 
             btnLine.Name = "btnLine"
             btnLine.Parent = buttonFrame
@@ -387,6 +374,7 @@ elseif theme == "WhiteTheme" then
             textBoxFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             textBoxFrame.BackgroundTransparency = 1.000
             textBoxFrame.Size = UDim2.new(0, 435, 0, 50)
+            textBoxFrame.BorderColor3 = theme.HeaderColor
 
             btnLine.Name = "btnLine"
             btnLine.Parent = textBoxFrame
@@ -488,8 +476,6 @@ elseif theme == "WhiteTheme" then
 
             SlidingBar.Position = UDim2.new(0.015625, 0, 0.150000006, 0) 
             SlidingBar.Size = UDim2.new(0, 400, 0, 13)
-
-
             
             MainSlidingBar.Name = "MainSlidingBar"
             MainSlidingBar.Parent = SlidingBar
@@ -784,8 +770,9 @@ elseif theme == "WhiteTheme" then
 
 
 		function Items:Toggle(s) 
-     local text = s.Name
-     local nob = s.Callback
+                        local text = s.Name
+                        local nob = s.Callback
+
 			local Toggled = false
 			local Toggle = Instance.new("TextButton")
 			local ToggleCorner = Instance.new("UICorner")
